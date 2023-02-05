@@ -1,0 +1,27 @@
+version: '3.9'
+
+networks:
+  my_bridge:
+    driver: bridge
+    name: my_bridge
+
+services:
+
+  database:
+    container_name: database
+    image: mongo
+    networks:
+      - my_bridge
+
+  database_filler:
+    container_name: database_filler
+    build: database_filler/
+    command: python /scripts/filler.py
+    volumes:
+      - ./data/:/data
+    networks:
+      - my_bridge
+    depends_on:
+      - database
+
+  
