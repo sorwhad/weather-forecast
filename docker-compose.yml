@@ -24,4 +24,18 @@ services:
     depends_on:
       - database
 
-  
+  server:
+    container_name: server
+    build: server/
+    ports:
+      - "10121:8000"
+    command: python /scripts/server.py
+    networks:
+      - my_bridge
+    volumes:
+      - content-volume:/scripts/static/content
+      - models-volume:/scripts/static/models
+
+volumes:
+  content-volume:
+  models-volume:
