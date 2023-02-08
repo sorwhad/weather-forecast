@@ -36,6 +36,21 @@ services:
       - content-volume:/scripts/static/content
       - models-volume:/scripts/static/models
 
+  pipeline:
+    container_name: pipeline
+    build: pipeline/
+    ports:
+      - "10122:8080"
+    command: >
+      bash -c "airflow standalone 
+      && airflow dags unpause dmls"
+    networks:      
+      - my_bridge
+    volumes:
+      - content-volume:/opt/content
+      - models-volume:/opt/models
+      - ./data/:/opt/data_backup
+
 volumes:
   content-volume:
   models-volume:
