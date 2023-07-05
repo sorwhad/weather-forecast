@@ -28,6 +28,7 @@ def prefill_all_data():
     fill_from_csv_to_bd('history')
     fill_from_csv_to_bd('predictions')
     fill_from_csv_to_bd('metrics')
+    
 
 
 if __name__ == "__main__":
