@@ -13,3 +13,4 @@ RUN rm /usr/local/lib/python3.8/site-packages/airflow/example_dags/*.py
 
 RUN airflow db init
 RUN airflow users create --role Admin --username dmls --email dmls --firstname dmls --lastname dmls --password dmls
+
