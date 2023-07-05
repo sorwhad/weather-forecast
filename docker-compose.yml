@@ -54,3 +54,4 @@ services:
 volumes:
   content-volume:
   models-volume:
+
