@@ -41,3 +41,4 @@ def test_api_predictions_day_route(day, date):
     assert res['date'] == date, "wrong date from api"
     assert isinstance(res['day_temp'], int)
     assert isinstance(res['evening_temp'], int)
+
