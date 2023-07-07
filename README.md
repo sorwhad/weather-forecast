@@ -4,6 +4,8 @@
 ## Architecture
 ![architecture](./pics/arch.png)
 
+![architecture2](./pics/arch2.png)
+
 All of these components are deployed in a `kubernetes` cluster.
 
 ### Overall description 
